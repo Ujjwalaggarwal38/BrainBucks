@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home"
+    <item android:title="Home" android:id="@+id/homeFragment"
         android:icon="@drawable/home_svgrepo_com"/>
-    <item android:title="Spin"
+    <item android:title="Spin"    android:id="@+id/spinFragment"
         android:icon="@drawable/spin_svgrepo_com"/>
-    <item android:title="History"
+    <item android:title="History" android:id="@+id/historyFragment"
         android:icon="@drawable/history_svgrepo_com"/>
-    <item android:title="Profile"
+    <item android:title="Profile"  android:id="@+id/profileFragment"
         android:icon="@drawable/profile_svgrepo_com"/>
 </menu>
