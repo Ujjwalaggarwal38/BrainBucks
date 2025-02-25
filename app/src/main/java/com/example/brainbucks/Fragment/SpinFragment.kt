@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.brainbucks.databinding.FragmentSpinBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlin.random.Random
 
 class SpinFragment : Fragment() {
@@ -25,6 +26,16 @@ class SpinFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding.coin.setOnClickListener{
+            val bottomSheetDialog: BottomSheetDialogFragment = WithdrawlFragment()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager,"Test")
+            bottomSheetDialog.enterTransition
+        }
+        binding.wuthdrawcoin.setOnClickListener{
+            val bottomSheetDialog: BottomSheetDialogFragment = WithdrawlFragment()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager,"Test")
+            bottomSheetDialog.enterTransition
+        }
         // Inflate the layout for this fragment
         return binding.root
     }

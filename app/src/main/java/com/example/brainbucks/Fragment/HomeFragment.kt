@@ -12,6 +12,7 @@ import com.example.brainbucks.R
 import com.example.brainbucks.databinding.ActivityHomeBinding
 import com.example.brainbucks.databinding.CategroyItemBinding
 import com.example.brainbucks.databinding.FragmentHomeBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class HomeFragment : Fragment() {
     private val binding: FragmentHomeBinding by lazy {
@@ -27,6 +28,16 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding.coin.setOnClickListener{
+            val bottomSheetDialog:BottomSheetDialogFragment = WithdrawlFragment()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager,"Test")
+            bottomSheetDialog.enterTransition
+        }
+        binding.wuthdrawcoin.setOnClickListener{
+            val bottomSheetDialog:BottomSheetDialogFragment = WithdrawlFragment()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager,"Test")
+            bottomSheetDialog.enterTransition
+        }
         // Inflate the layout for this fragment
         return binding.root
     }
