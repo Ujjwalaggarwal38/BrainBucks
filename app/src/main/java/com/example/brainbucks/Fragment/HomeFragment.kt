@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.brainbucks.Adaptor.CategoryAdaptor
 import com.example.brainbucks.ModalClass.CategoryModalClass
 import com.example.brainbucks.R
-import com.example.brainbucks.databinding.ActivityHomeBinding
-import com.example.brainbucks.databinding.CategroyItemBinding
 import com.example.brainbucks.databinding.FragmentHomeBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -44,12 +42,13 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        categoryList.clear()
         categoryList.add(CategoryModalClass(R.drawable.category_1,"Science"))
         categoryList.add(CategoryModalClass(R.drawable.cactegory_2,"Math"))
         categoryList.add(CategoryModalClass(R.drawable.category_3,"English"))
         categoryList.add(CategoryModalClass(R.drawable.category_4,"History"))
         binding.recyclerview.layoutManager = GridLayoutManager(requireContext(),2)
-        var adaptor = CategoryAdaptor(categoryList)
+        var adaptor = CategoryAdaptor(categoryList, requireActivity())
         binding.recyclerview.adapter = adaptor
         binding.recyclerview.setHasFixedSize(true)
     }

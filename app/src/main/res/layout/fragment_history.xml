@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6697F3"
     tools:context=".Fragment.HistoryFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,6 +43,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="10dp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/avataar" />
 
             <TextView
@@ -51,6 +53,7 @@
                 android:layout_weight="1"
                 android:text="Name"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -58,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/coin" />
 
             <TextView
@@ -66,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:text="Coin"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>

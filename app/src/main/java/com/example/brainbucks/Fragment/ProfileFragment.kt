@@ -8,6 +8,12 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import com.example.brainbucks.R
 import com.example.brainbucks.databinding.FragmentProfileBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 
 class ProfileFragment : Fragment() {
@@ -23,19 +29,31 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding.imageButton.setOnClickListener{
-            if(isExpand){
-                binding.expandableconstraintlayout.visibility=View.VISIBLE
+        binding.imageButton.setOnClickListener {
+            if (isExpand) {
+                binding.expandableconstraintlayout.visibility = View.VISIBLE
                 binding.imageButton.setImageResource(R.drawable.uparrow)
-            }
-            else{
-                binding.expandableconstraintlayout.visibility=View.GONE
+            } else {
+                binding.expandableconstraintlayout.visibility = View.GONE
                 binding.imageButton.setImageResource(R.drawable.downarrow)
 
             }
-            isExpand!=isExpand
+            isExpand != isExpand
         }
 
+        Firebase.database.reference.child("Userss").child(Firebase.auth.currentUser!!.uid)
+            .addValueEventListener(
+                object : ValueEventListener{
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+
+                }
+            )
         return binding.root
     }
 

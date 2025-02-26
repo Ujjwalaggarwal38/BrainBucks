@@ -6,9 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.brainbucks.R
+import com.example.brainbucks.databinding.FragmentWithdrawlBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class WithdrawlFragment : BottomSheetDialogFragment() {
+    private val binding:FragmentWithdrawlBinding by lazy {
+        FragmentWithdrawlBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -19,7 +23,7 @@ class WithdrawlFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_withdrawl, container, false)
+        return binding.root
     }
 
     companion object {

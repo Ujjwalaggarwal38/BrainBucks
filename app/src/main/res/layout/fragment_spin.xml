@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.SpinFragment">
+    tools:context=".Fragment.SpinFragment"
+    android:background="#6697F3">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,6 +40,7 @@
                 android:id="@+id/profilepic"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
+                android:scaleType="fitCenter"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/avataar" />
 
@@ -48,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Name"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -55,6 +58,7 @@
                 android:id="@+id/wuthdrawcoin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/coin" />
 
@@ -63,6 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Coin"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
