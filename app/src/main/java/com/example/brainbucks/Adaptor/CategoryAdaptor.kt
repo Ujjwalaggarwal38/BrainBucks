@@ -35,7 +35,8 @@ class CategoryAdaptor(
         holder.binding.categorybtn.setOnClickListener{
           val intent = Intent(requireActivity,QuizActivity::class.java)
             intent.putExtra("category_image",categoryList[position].catImage)
-            requireActivity.startActivity(intent)
+            intent.putExtra("questionType",categoryList[position].catText)
+             requireActivity.startActivity(intent)
         }
     }
 

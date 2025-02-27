@@ -8,8 +8,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.brainbucks.Adaptor.HistoryAdaptor
 import com.example.brainbucks.ModalClass.HistoryModalClass
+import com.example.brainbucks.ModalClass.User
 import com.example.brainbucks.databinding.FragmentHistoryBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.getValue
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class HistoryFragment : Fragment() {
     private val binding: FragmentHistoryBinding by lazy {
@@ -44,6 +52,25 @@ class HistoryFragment : Fragment() {
         val adaptor=HistoryAdaptor(ListHistory)
         binding.historyrv.adapter=adaptor
         binding.historyrv.setHasFixedSize(true)
+
+        Firebase.database.reference.child("Userss").child(Firebase.auth.currentUser!!.uid)
+            .addValueEventListener(
+                object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        for(datasnap in snapshot.children){
+                            var user = snapshot.getValue<User>()
+                            binding.Name.text = user?.name
+                        }
+
+
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+//                        TODO("Not yet implemented")
+                    }
+
+                }
+            )
         return binding.root
 
     }

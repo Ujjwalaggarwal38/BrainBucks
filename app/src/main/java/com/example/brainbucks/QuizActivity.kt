@@ -8,6 +8,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.brainbucks.Fragment.WithdrawlFragment
 import com.example.brainbucks.databinding.ActivityQuizBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class QuizActivity : AppCompatActivity() {
     private val binding: ActivityQuizBinding by lazy {
@@ -17,6 +19,10 @@ class QuizActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+        var image = intent.getIntExtra("category_image",0)
+        var catText = intent.getStringExtra("questionType")
+        Firebase.firestore
+        binding.categoryimg.setImageResource(image)
         binding.coin.setOnClickListener{
             val bottomSheetDialog: BottomSheetDialogFragment = WithdrawlFragment()
             bottomSheetDialog.show(this@QuizActivity.supportFragmentManager,"Test")
@@ -27,8 +33,7 @@ class QuizActivity : AppCompatActivity() {
             bottomSheetDialog.show(this@QuizActivity.supportFragmentManager,"Test")
             bottomSheetDialog.enterTransition
         }
-        var image = intent.getIntExtra("category_image",0)
-        binding.categoryimg.setImageResource(image)
+
 
     }
 }
