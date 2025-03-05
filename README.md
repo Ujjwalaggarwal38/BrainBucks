@@ -12,9 +12,9 @@ _A Kotlin-based quiz app with Firebase integration, rewards, and transactions.
 ✅ **Transaction & Withdrawal** – Track coins and withdraw earnings 💰  
 ✅ **User Profile Section** – View progress, rewards, and transaction history 🏆  
 
-🚀 Tech Stack
-**Kotlin – Native Android Development
-**Firebase – Authentication, Firestore, Realtime Database
+## 🚀 Tech Stack  
+- **Kotlin** – Native Android Development  
+- **Firebase** – Authentication, Firestore, Realtime Database 
 
 💡 Have feedback or suggestions? Drop an issue!
 
